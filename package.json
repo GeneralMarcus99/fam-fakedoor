@@ -1,0 +1,12 @@
+{
+  "name": "fem-sajt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FEM fake door landing stranice (kreatin, magnezijum)",
+  "scripts": {
+    "dev": "serve landing -l 3000"
+  },
+  "devDependencies": {
+    "serve": "14.2.4"
+  }
+}

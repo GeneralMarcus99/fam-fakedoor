@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FEM Magnezijum</title>
+<meta name="description" content="Magnezijum-bisglicinat u večernjoj kesici za žene posle 40. Upiši se na listu čekanja.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0} img{max-width:100%} [hidden]{display:none!important}
+
+/* Layout: kamena podloga kao na fotografijama; hero tekst + foto, pa kesica i sastav, pa forma u boji proizvoda. Jedan izgled za sve tri varijante, menja se samo boja proizvoda. */
+:root {
+  --stone: #e7e4df;
+  --paper: #f6f5f2;
+  --ink: #1e1a1f;
+  --muted: #5d575e;
+  --line: #cfc9c1;
+  --gold: #a9834a;
+  --accent: #1f2c49;
+  --accent-ink: #fbf8f4;
+  --accent-soft: #cfd8ea;
+  --ok: #2f6b4a;
+  --font-display: "Bricolage Grotesque", "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header.top { padding-block: 22px; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.32em; font-size: 1.05rem; }
+.wordmark span { color: var(--gold); }
+.pill {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; color: var(--muted);
+}
+.hero { padding-block: 12px 64px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+  line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 22px; text-wrap: balance;
+}
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 34ch; margin: 0 0 30px; }
+.lede strong { color: var(--ink); font-weight: 600; }
+.cta {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; font-size: 1rem; text-decoration: none; padding: 16px 26px; border-radius: 4px;
+  border: 0; cursor: pointer; font-family: var(--font-body);
+}
+.cta:hover { filter: brightness(1.12); }
+.cta:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.reassure { font-size: 0.9rem; color: var(--muted); margin: 14px 0 0; }
+.photo { position: relative; margin: 0; }
+.photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+.photo::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--gold); z-index: -1; }
+.hero .photo { isolation: isolate; }
+
+.inside { background: var(--paper); padding-block: 72px; }
+.inside .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.inside img { display: block; width: 100%; height: auto; border-radius: 2px; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 26px; text-wrap: balance; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.facts li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 18px; padding-block: 18px; border-top: 1px solid var(--line); }
+.facts li:last-child { border-bottom: 1px solid var(--line); }
+.facts .k { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); padding-top: 3px; }
+.facts .v { margin: 0; }
+.facts small { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+
+.join { background: var(--accent); color: var(--accent-ink); padding-block: 72px; }
+.join .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.join h2 { color: var(--accent-ink); }
+.join p { color: var(--accent-soft); margin: 0 0 14px; max-width: 38ch; }
+.offer { font-family: var(--font-display); font-weight: 700; font-size: clamp(3rem, 7vw, 4.8rem); line-height: 1; color: var(--accent-ink); margin: 6px 0 10px; }
+.offer span { font-size: 0.32em; letter-spacing: 0.06em; display: block; margin-top: 8px; font-family: var(--font-body); font-weight: 600; color: var(--accent-soft); }
+form.card { background: var(--paper); color: var(--ink); padding: clamp(22px, 4vw, 36px); border-radius: 4px; display: grid; gap: 22px; }
+label.lbl, legend { font-weight: 700; font-size: 0.95rem; display: block; margin-bottom: 8px; padding: 0; }
+input[type=email], select {
+  width: 100%; font: inherit; font-size: 1rem; padding: 14px 14px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--ink);
+}
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; }
+.choice span { display: block; border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; font-size: 0.93rem; background: #fff; cursor: pointer; height: 100%; }
+.choice input:checked + span { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); font-weight: 600; }
+.choice input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+.consent { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; font-size: 0.85rem; color: var(--muted); align-items: start; }
+.consent input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent); }
+.err { color: #9b2c2c; font-size: 0.88rem; margin: -10px 0 0; }
+.done { display: grid; gap: 10px; }
+.done h3 { font-family: var(--font-display); font-size: 1.6rem; margin: 0; color: var(--ok); }
+.done p { margin: 0; color: var(--muted); }
+
+.faq { padding-block: 64px; }
+.faq .wrap { max-width: 760px; }
+details { border-top: 1px solid var(--line); padding-block: 16px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { margin: 10px 0 0; color: var(--muted); }
+
+
+.price { display: grid; gap: 14px; }
+.join .price p { color: var(--ink); max-width: none; }
+.price .amt { font-family: var(--font-display); font-weight: 700; font-size: 2.2rem; line-height: 1; color: var(--ink); }
+.price .amt small { display: block; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-top: 6px; }
+.price .btns { display: grid; gap: 8px; }
+.price button { font: inherit; font-weight: 600; text-align: left; padding: 13px 14px; border-radius: 4px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+.price button.yes { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.price button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+footer { padding-block: 28px 40px; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+@media (max-width: 820px) {
+  .hero .wrap, .inside .wrap, .join .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 4px 48px; }
+  .hero .photo { max-width: 520px; }
+  .hero .photo img { aspect-ratio: 4 / 3; object-position: center 30%; }
+  .photo::after { inset: 10px -10px -10px 10px; }
+  .facts li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .inside img { max-width: 520px; }
+}
+@media (max-width: 420px) { .choices { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="wordmark">FEM<span>.</span></div>
+    <div class="pill">U pripremi</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Za žene posle 40 · lista čekanja</p>
+      <h1>Večernja rutina od 30 sekundi.</h1>
+      <p class="lede"><strong>FEM Magnezijum</strong> je magnezijum-bisglicinat u kesici koju razmutiš uveče, uz čaj ili čašu vode.</p>
+      <a class="cta" href="#prijava">Upiši se na listu čekanja</a>
+      <p class="reassure">Ništa ne plaćaš. Javljamo ti kad krene prodaja, uz 15% na prvu narudžbinu.</p>
+    </div>
+    <figure class="photo"><img src="c_hero.jpg" alt="Žena čita knjigu uveče uz šolju čaja" width="900" height="1117"></figure>
+  </div>
+</section>
+
+<section class="inside">
+  <div class="wrap">
+    <img src="c_pack.jpg" alt="Kutija FEM Magnezijum sa kesicama i šoljom" width="900" height="1117" loading="lazy">
+    <div>
+      <h2>Šta je u kesici</h2>
+      <ul class="facts">
+        <li><span class="k">Magnezijum</span><p class="v">Magnezijum doprinosi normalnoj funkciji nervnog sistema.</p></li>
+        <li><span class="k">I još</span><p class="v">Magnezijum doprinosi smanjenju umora i iscrpljenosti.</p></li>
+        <li><span class="k">Oblik</span><p class="v">Bisglicinat: magnezijum vezan za aminokiselinu glicin. Jedna kesica uveče, 30 kesica u kutiji.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="prijava">
+  <div class="wrap">
+    <div>
+      <h2>Lista čekanja</h2>
+      <div class="offer">15%<span>na prvu narudžbinu</span></div>
+      <p>Prva serija je ograničena. Upisani prvi saznaju datum i dobijaju popust.</p>
+      <p>Proizvod je u pripremi i registraciji. Ništa se sada ne naplaćuje.</p>
+    </div>
+    <form class="card" id="form" novalidate>
+      <div>
+        <label class="lbl" for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="ime@primer.rs" required>
+      </div>
+      <fieldset>
+        <legend>Gde sada najčešće kupuješ suplemente?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="kupuje" id="k1" value="apoteka"><span>Apoteka</span></label>
+          <label class="choice"><input type="radio" name="kupuje" id="k2" value="drogerija"><span>dm ili druga drogerija</span></label>
+          <label class="choice"><input type="radio" name="kupuje" id="k3" value="srpski-online"><span>Srpski online šop</span></label>
+          <label class="choice"><input type="radio" name="kupuje" id="k4" value="inostranstvo"><span>iHerb ili inostranstvo</span></label>
+          <label class="choice"><input type="radio" name="kupuje" id="k5" value="ne-kupuje"><span>Ne kupujem redovno</span></label>
+        </div>
+      </fieldset>
+      <div>
+        <label class="lbl" for="zasto">Zašto baš tamo?</label>
+        <select id="zasto" name="zasto">
+          <option value="">Izaberi</option>
+          <option value="cena">Cena</option>
+          <option value="izbor">Veći izbor</option>
+          <option value="poverenje">Više verujem kvalitetu</option>
+          <option value="savet">Savet farmaceuta ili lekara</option>
+          <option value="dostava">Brza dostava</option>
+          <option value="navika">Navika</option>
+        </select>
+      </div>
+      <label class="consent" for="saglasnost"><input type="checkbox" id="saglasnost" name="saglasnost"> <span>Pristajem da mi TF Nootropics d.o.o. pošalje obaveštenje o lansiranju i kod za popust. Odjava je moguća u svakom mejlu.</span></label>
+      <p class="err" id="err" hidden></p>
+      <button class="cta" type="submit">Upiši me</button>
+    </form>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Pitanja</h2>
+    <details><summary>Kada kreće prodaja?</summary><p>Proizvod je u registraciji kod Ministarstva zdravlja. Kada bude spreman, upisani dobijaju mejl prvi.</p></details>
+    <details><summary>Da li sada nešto plaćam?</summary><p>Ne. Upis na listu je besplatan i ne obavezuje te na kupovinu.</p></details>
+    <details><summary>Šta dobijam upisom?</summary><p>Datum lansiranja i kod za 15% popusta na prvu narudžbinu.</p></details>
+    <details><summary>Zašto bisglicinat?</summary><p>Bisglicinat je oblik magnezijuma vezan za aminokiselinu glicin. To je oblik koji ljudi u Srbiji poslednjih godina najviše traže.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>FEM je radni naziv proizvoda TF Nootropics d.o.o., Niš.</span>
+    <span>Dodaci ishrani nisu zamena za raznovrsnu i uravnoteženu ishranu.</span>
+  </div>
+</footer>
+
+<script>
+/* Podesi pre objave na svom domenu: */
+var CONFIG = { variant: "C-magnezijum", formEndpoint: "https://script.google.com/macros/s/AKfycbwGafEumpx3a6Fdgrs_zGm_pS2EWWa7-pGjzdsTIrc2cWQUlCyzXV3BJI4ftJHA095s/exec", metaPixelId: "", prices: ["1.990", "2.490"], unit: "30 kesica, mesec dana" };
+
+(function () {
+  if (CONFIG.metaPixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', CONFIG.metaPixelId);
+    window.fbq('track', 'PageView');
+  }
+  var params = {};
+  try { new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf('utm_') === 0) params[k] = v; }); } catch (e) {}
+
+  function send(payload) {
+    if (!CONFIG.formEndpoint) { try { console.warn('FEM: formEndpoint nije podešen, prijava nije sačuvana', payload); } catch (e) {} return; }
+    try { fetch(CONFIG.formEndpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) }); } catch (e) {}
+  }
+  var form = document.getElementById('form');
+  var err = document.getElementById('err');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var kupuje = (form.querySelector('input[name=kupuje]:checked') || {}).value || '';
+    var zasto = document.getElementById('zasto').value;
+    var ok = document.getElementById('saglasnost').checked;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Upiši ispravnu email adresu.'; err.hidden = false; return; }
+    if (!ok) { err.textContent = 'Označi saglasnost da bismo mogli da ti pošaljemo obaveštenje.'; err.hidden = false; return; }
+    err.hidden = true;
+    send({ type: 'prijava', email: email, kupuje: kupuje, zasto: zasto, saglasnost: true, variant: CONFIG.variant, page: location.pathname, ts: new Date().toISOString(), utm: params });
+    if (window.fbq) { window.fbq('track', 'Lead', { content_name: CONFIG.variant }); }
+    var safe = email.replace(/[<>&"]/g, '');
+    var price = CONFIG.prices[Math.floor(Math.random() * CONFIG.prices.length)];
+    try { var saved = localStorage.getItem('fem_price_' + CONFIG.variant); if (saved) price = saved; else localStorage.setItem('fem_price_' + CONFIG.variant, price); } catch (e) {}
+    form.innerHTML = '<div class="done"><h3>Na listi si.</h3><p>Javićemo ti se na ' + safe + ' čim krene prodaja, sa kodom za 15%.</p></div>' +
+      '<div class="price" id="price"><p style="margin:0;font-weight:700">Još jedno pitanje, da prvu seriju napravimo kako treba:</p>' +
+      '<div class="amt">' + price + ' RSD<small>' + CONFIG.unit + ', pre popusta od 15%</small></div>' +
+      '<p style="margin:0">Da li bi kupila po ovoj ceni?</p><div class="btns">' +
+      '<button type="button" class="yes" data-a="da">Da, rezerviši mi kutiju iz prve serije</button>' +
+      '<button type="button" data-a="mozda">Možda, zavisi od recenzija</button>' +
+      '<button type="button" data-a="skupo">Ne, to mi je skupo</button></div></div>';
+    Array.prototype.forEach.call(form.querySelectorAll('#price button'), function (b) {
+      b.addEventListener('click', function () {
+        var a = b.getAttribute('data-a');
+        send({ type: 'cena', email: email, cena: price, odgovor: a, variant: CONFIG.variant, page: location.pathname, ts: new Date().toISOString(), utm: params });
+        if (window.fbq && a === 'da') { window.fbq('trackCustom', 'Rezervacija', { content_name: CONFIG.variant, value: Number(price.replace('.', '')), currency: 'RSD' }); }
+        document.getElementById('price').innerHTML = a === 'da' ? '<p style="margin:0"><strong>Rezervisano.</strong> Kutija iz prve serije te čeka, ništa ne plaćaš unapred.</p>' : '<p style="margin:0">Hvala, ovo nam mnogo znači.</p>';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

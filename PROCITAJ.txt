@@ -1,0 +1,16 @@
+FEM test v2 — šta je unutra
+
+landing/kreatin     nova formula (kreatin 3 g + kolagen 5 g + C, D3, K2, B6, B9, B12, biotin, cink, selen)
+                    naslov prati oglas preko ?v=a1 | a2 | a3
+landing/magnezijum  kontrola, isti sadržaj kao pre + pitanje o ceni
+oglasi/             a1 snaga (stari a_h1), a2 kreatin+kolagen (novo), a3 nije samo za teretanu (novo), c1 magnezijum (stari c_h1)
+prijave-apps-script.gs  besplatan prijemnik prijava u Google Sheet
+
+Linkovi u oglasima (domen zameni svojim):
+  a1  /kreatin/?v=a1&utm_source=meta&utm_campaign=fem2&utm_content=a1
+  a2  /kreatin/?v=a2&utm_source=meta&utm_campaign=fem2&utm_content=a2
+  a3  /kreatin/?v=a3&utm_source=meta&utm_campaign=fem2&utm_content=a3
+  c1  /magnezijum/?utm_source=meta&utm_campaign=fem2&utm_content=c1
+
+Pre objave u obe index.html, u CONFIG: formEndpoint = URL iz Apps Script-a, metaPixelId = ID piksela.
+Gvožđe se ne objavljuje u ovom krugu. Stranica /gvozdje/ može da ostane na Cloudflare-u, samo bez oglasa.
