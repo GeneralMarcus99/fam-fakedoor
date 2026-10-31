@@ -1,16 +1,16 @@
-FEM test v2 — šta je unutra
+FEM test v3 — šta je unutra
 
 landing/kreatin     nova formula (kreatin 3 g + kolagen 5 g + C, D3, K2, B6, B9, B12, biotin, cink, selen)
-                    naslov prati oglas preko ?v=a1 | a2 | a3
+                    naslov prati oglas preko ?v=snaga | lepota | jutro
 landing/magnezijum  kontrola, isti sadržaj kao pre + pitanje o ceni
-oglasi/             a1 snaga (stari a_h1), a2 kreatin+kolagen (novo), a3 nije samo za teretanu (novo), c1 magnezijum (stari c_h1)
+oglasi/             snaga, lepota, jutro (kreatin), c1 magnezijum; feed 4x5 i story 9x16. Stari a1–a3 su u oglasi/staro/
 prijave-apps-script.gs  besplatan prijemnik prijava u Google Sheet
 
 Linkovi u oglasima (domen zameni svojim):
-  a1  /kreatin/?v=a1&utm_source=meta&utm_campaign=fem2&utm_content=a1
-  a2  /kreatin/?v=a2&utm_source=meta&utm_campaign=fem2&utm_content=a2
-  a3  /kreatin/?v=a3&utm_source=meta&utm_campaign=fem2&utm_content=a3
-  c1  /magnezijum/?utm_source=meta&utm_campaign=fem2&utm_content=c1
+  snaga   /kreatin/?v=snaga&utm_source=meta&utm_campaign=fem3&utm_content=snaga
+  lepota  /kreatin/?v=lepota&utm_source=meta&utm_campaign=fem3&utm_content=lepota
+  jutro   /kreatin/?v=jutro&utm_source=meta&utm_campaign=fem3&utm_content=jutro
+  c1      /magnezijum/?utm_source=meta&utm_campaign=fem3&utm_content=c1
 
-Pre objave u obe index.html, u CONFIG: formEndpoint = URL iz Apps Script-a, metaPixelId = ID piksela.
+U obe index.html, u CONFIG, već su upisani formEndpoint (Google Sheet) i metaPixelId (1109415491670878).
 Gvožđe se ne objavljuje u ovom krugu. Stranica /gvozdje/ može da ostane na Cloudflare-u, samo bez oglasa.
