@@ -13,4 +13,3 @@ Linkovi u oglasima (domen zameni svojim):
   c1      /magnezijum/?utm_source=meta&utm_campaign=fem3&utm_content=c1
 
 U obe index.html, u CONFIG, već su upisani formEndpoint (Google Sheet) i metaPixelId (1109415491670878).
-Gvožđe se ne objavljuje u ovom krugu. Stranica /gvozdje/ može da ostane na Cloudflare-u, samo bez oglasa.
