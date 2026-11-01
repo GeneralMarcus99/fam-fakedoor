@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FEM · uskoro, za žene posle 40</title>
+<meta name="description" content="FEM Kreatin i FEM Magnezijum, kesice za žene posle 40. Upiši se na listu čekanja.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0} img{max-width:100%} [hidden]{display:none!important}
+
+/* Isti sistem kao landing stranice. Svaka kartica nosi boju svog proizvoda (kreatin šljiva, magnezijum teget). */
+:root {
+  --stone: #e7e4df;
+  --paper: #f6f5f2;
+  --ink: #1e1a1f;
+  --muted: #5d575e;
+  --line: #cfc9c1;
+  --gold: #a9834a;
+  --kreatin: #5b2440;
+  --magnezijum: #1f2c49;
+  --accent-ink: #fbf8f4;
+  --font-display: "Bricolage Grotesque", "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header.top { padding-block: 22px; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.32em; font-size: 1.05rem; }
+.wordmark span { color: var(--gold); }
+.pill {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; color: var(--muted);
+}
+.intro { padding-block: 12px 36px; }
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kreatin); margin: 0 0 18px; }
+h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+  line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 18px; text-wrap: balance; max-width: 16ch;
+}
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 40ch; margin: 0; }
+
+.cards { padding-bottom: 56px; }
+.cards .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 3vw, 32px); }
+.card {
+  display: grid; grid-template-rows: auto 1fr; background: var(--paper); color: inherit; text-decoration: none;
+  border-radius: 4px; overflow: hidden; border-top: 6px solid var(--c);
+}
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.card .body { padding: clamp(20px, 3vw, 28px); display: flex; flex-direction: column; gap: 10px; }
+.card h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0; }
+.card p { margin: 0; color: var(--muted); }
+.card .go {
+  margin-top: auto; padding-top: 8px; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--c); color: var(--accent-ink); font-weight: 700; font-size: 0.98rem; padding: 13px 20px; border-radius: 4px;
+}
+.card:hover .go { filter: brightness(1.12); }
+.card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.card.k { --c: var(--kreatin); }
+.card.m { --c: var(--magnezijum); }
+.card.k img { object-position: center 25%; }
+
+.survey { padding-bottom: 72px; }
+.survey .box {
+  border: 1px solid var(--line); border-radius: 4px; padding: clamp(18px, 3vw, 26px);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px;
+}
+.survey p { margin: 0; max-width: 46ch; }
+.survey a { color: var(--ink); font-weight: 700; }
+.survey a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+footer { padding-block: 28px 40px; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+footer a { color: inherit; }
+
+/* Baner za kolačiće: mali, na dnu ekrana. Pixel se pokreće tek posle „Prihvatam“. */
+.ck {
+  position: fixed; z-index: 50; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  max-width: 560px; margin: 0 auto; background: var(--ink); color: var(--paper); border-radius: 4px;
+  padding: 12px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  font-size: 0.88rem; line-height: 1.4; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+.ck p { margin: 0; flex: 1 1 14rem; }
+.ck .ck-b { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ck button { font: inherit; font-weight: 700; padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(246, 245, 242, 0.4); background: transparent; color: inherit; cursor: pointer; }
+.ck button.ck-da { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.ck a { color: inherit; }
+.ck button:focus-visible, .ck a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .cards .wrap { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="wordmark">FEM<span>.</span></div>
+    <div class="pill">U pripremi</div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="eyebrow">Za žene posle 40 · lista čekanja</p>
+    <h1>FEM · uskoro, za žene posle 40</h1>
+    <p class="lede">Dve kesice u pripremi. Upiši se na listu za onu koja te zanima i saznaj prva kad krene prodaja, uz 15% na prvu narudžbinu.</p>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="wrap">
+    <a class="card k" href="/kreatin/">
+      <img src="/kreatin/snaga_strana.jpg" alt="Žena oko 45 godina u kućnoj teretani, ruke na bokovima, smeši se" width="928" height="1152">
+      <div class="body">
+        <h2>FEM Kreatin</h2>
+        <p>Jutarnja kesica kreatina i kolagena, uz vitamine C, D, K2 i B kompleks, za žene posle 40.</p>
+        <span class="go">Lista čekanja →</span>
+      </div>
+    </a>
+    <a class="card m" href="/magnezijum/">
+      <img src="/magnezijum/c_hero.jpg" alt="Žena čita knjigu uveče uz šolju čaja" width="900" height="1117">
+      <div class="body">
+        <h2>FEM Magnezijum</h2>
+        <p>Magnezijum-bisglicinat u kesici koju razmutiš uveče, uz čaj ili čašu vode.</p>
+        <span class="go">Lista čekanja →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="survey">
+  <div class="wrap">
+    <div class="box">
+      <p>Imaš 3 minuta? Pomozi nam da napravimo prvu seriju kako treba.</p>
+      <a href="https://tf-upitnik.andri-stef-ja.workers.dev/" target="_blank" rel="noopener">Popuni anonimni upitnik ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>FEM je radni naziv proizvoda TF Nootropics d.o.o., Niš.</span>
+    <span>Dodaci ishrani nisu zamena za raznovrsnu i uravnoteženu ishranu.</span>
+    <a href="/privatnost/">Politika privatnosti</a>
+  </div>
+</footer>
+
+<div class="ck" id="ck" role="region" aria-label="Kolačići" hidden>
+  <p>Koristimo kolačiće za merenje oglasa.</p>
+  <div class="ck-b"><button type="button" class="ck-da" id="ck-da">Prihvatam</button><button type="button" id="ck-ne">Ne sada</button> · <a href="/privatnost/#kolacici">Više</a></div>
+</div>
+
+<script>
+var CONFIG = { metaPixelId: "1109415491670878" };
+
+/* Pixel tek posle pristanka; izbor se deli sa landing stranicama (isti ključ u localStorage). */
+(function () {
+  function startPixel() {
+    if (!CONFIG.metaPixelId || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', CONFIG.metaPixelId);
+    window.fbq('track', 'PageView');
+  }
+  var KEY = 'fem_kolacici', choice = null, ck = document.getElementById('ck');
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+  if (choice === 'da') { startPixel(); return; }
+  if (choice === 'ne') return;
+  ck.hidden = false;
+  function pick(val) {
+    try { localStorage.setItem(KEY, val); } catch (e) {}
+    ck.hidden = true;
+    if (val === 'da') startPixel();
+  }
+  document.getElementById('ck-da').addEventListener('click', function () { pick('da'); });
+  document.getElementById('ck-ne').addEventListener('click', function () { pick('ne'); });
+})();
+</script>
+
+</body>
+</html>
