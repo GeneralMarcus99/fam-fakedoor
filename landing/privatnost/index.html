@@ -69,12 +69,7 @@ a { color: var(--accent); }
 code { font-size: 0.92em; background: #ebe7e1; padding: 1px 6px; border-radius: 3px; }
 .box { border: 1px solid var(--line); border-radius: 4px; padding: 16px 18px; background: #fff; }
 .box p:last-child { margin: 0; }
-.btn {
-  display: inline-flex; align-items: center; font: inherit; font-weight: 700; font-size: 0.95rem;
-  background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 4px; padding: 12px 18px; cursor: pointer;
-}
-.btn:hover { filter: brightness(1.12); }
-.btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .note { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
 footer { padding-block: 28px 40px; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--line); }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
@@ -119,24 +114,24 @@ footer a { color: inherit; }
         <li>vreme prijave.</li>
       </ul>
       <p>Email je potreban da bismo ti javili kad krene prodaja. Ostali odgovori nisu obavezni.</p>
-      <p>Ako prihvatiš kolačiće, Meta Pixel prikuplja tehničke podatke o poseti: koju stranicu si otvorila, podatke o uređaju i pregledaču, IP adresu i identifikatore iz kolačića. Tvoj email i odgovori iz forme ne šalju se Meta-i.</p>
+      <p>Preko Meta Pixel-a prikupljaju se tehnički podaci o poseti: koju stranicu si otvorila, podaci o uređaju i pregledaču, IP adresa i identifikatori iz kolačića. Tvoj email i odgovori iz forme ne šalju se Meta-i.</p>
 
       <h2>Zašto ih prikupljamo</h2>
       <ul>
         <li>da ti javimo kad počne prodaja i pošaljemo kod za 15% popusta;</li>
         <li>da pre lansiranja istražimo interesovanje i prihvatljivu cenu proizvoda;</li>
-        <li>da merimo koji oglasi dovode ljude na stranicu i na listu (samo ako prihvatiš kolačiće).</li>
+        <li>da merimo koji oglasi dovode ljude na stranicu i na listu.</li>
       </ul>
       <p>Ne prodajemo tvoje podatke i ne donosimo odluke o tebi automatski.</p>
 
       <h2>Pravni osnov</h2>
-      <p>Osnov je tvoj <strong>pristanak</strong>: štikliranje polja za saglasnost u formi i, posebno, klik na „Prihvatam“ u baneru za kolačiće. Pristanak možeš da povučeš u svakom trenutku. Povlačenje ne utiče na zakonitost obrade pre toga.</p>
+      <p>Osnov je tvoj <strong>pristanak</strong>: štikliranje polja za saglasnost u formi, kojim pristaješ na obaveštenje o lansiranju i na merenje uspešnosti oglasa, i prihvatanje kolačića. Kolačiće možeš da blokiraš ili obrišeš u pregledaču (vidi deo „Kolačići“). Pristanak možeš da povučeš u svakom trenutku. Povlačenje ne utiče na zakonitost obrade pre toga.</p>
       <p>Hosting i fontovi tehnički moraju da prime IP adresu da bi ti stranica uopšte bila prikazana. To radimo na osnovu legitimnog interesa da stranica radi, bez kolačića za praćenje.</p>
 
       <h2>Ko još ima pristup (obrađivači) i prenos van Srbije</h2>
       <ul>
         <li><strong>Google</strong> (Google Apps Script i Google Sheets): čuvanje prijava sa liste;</li>
-        <li><strong>Meta Platforms</strong> (Meta Pixel): merenje oglasa, samo uz pristanak na kolačiće;</li>
+        <li><strong>Meta Platforms</strong> (Meta Pixel): merenje oglasa;</li>
         <li><strong>Cloudflare</strong>: hosting stranice;</li>
         <li><strong>Google Fonts</strong>: učitavanje fontova;</li>
         <li><strong>MailerLite</strong>: slanje mejlova, ako ga uključimo za obaveštenja.</li>
@@ -158,15 +153,19 @@ footer a { color: inherit; }
       <p>Na zahteve odgovaramo najkasnije u roku od 30 dana.</p>
 
       <h2 id="kolacici">Kolačići</h2>
-      <p>Stranica sama ne postavlja kolačiće za praćenje. Tek kad u baneru klikneš „Prihvatam“, Meta Pixel postavlja:</p>
+      <p>Sajt koristi Meta Pixel za merenje oglasa. Pixel postavlja dva kolačića:</p>
       <ul>
-        <li><code>_fbp</code>: prepoznaje tvoj pregledač pri ponovnim posetama, da bi se merilo koji oglasi dovode posete i prijave. Traje do 90 dana.</li>
+        <li><code>_fbp</code>: prepoznaje tvoj pregledač pri ponovnim posetama, da bi se merilo koji oglas je doveo posetu i prijavu. Traje do 90 dana.</li>
         <li><code>_fbc</code>: beleži da si došla klikom na Meta oglas. Postavlja se samo tada i traje do 90 dana.</li>
       </ul>
-      <p>Ako klikneš „Ne sada“, Meta Pixel se ne učitava, a forma radi normalno. Tvoj izbor pamtimo u pregledaču (<code>localStorage</code>), da te baner ne pita na svakoj stranici.</p>
-      <p>Izbor možeš da promeniš ovde. Kolačiće koji su već postavljeni brišeš u podešavanjima pregledača.</p>
-      <p><button type="button" class="btn" id="reset">Promeni izbor kolačića</button></p>
-      <p class="note" id="reset-msg" role="status" hidden>Izbor je obrisan. Baner će se ponovo pojaviti na stranici liste čekanja.</p>
+      <p>Ako ne želiš ovo merenje, kolačiće možeš da obrišeš ili blokiraš u podešavanjima pregledača:</p>
+      <ul>
+        <li><strong>Chrome:</strong> Podešavanja → Privatnost i bezbednost → Kolačići treće strane;</li>
+        <li><strong>Safari (iPhone):</strong> Podešavanja → Safari → Spreči praćenje na više sajtova;</li>
+        <li><strong>Firefox:</strong> Podešavanja → Privatnost i bezbednost → Poboljšana zaštita od praćenja.</li>
+      </ul>
+      <p>Forma radi i kad su kolačići blokirani.</p>
+      <p>Kako Meta koristi podatke za prikaz oglasa podešavaš u <a href="https://accountscenter.facebook.com/ads" target="_blank" rel="noopener">Meta podešavanjima oglasa</a>.</p>
 
       <h2>Izmene</h2>
       <p>Ako promenimo ovu politiku, novu verziju objavljujemo na ovoj stranici sa novim datumom izmene.</p>
@@ -178,16 +177,10 @@ footer a { color: inherit; }
   <div class="wrap">
     <span>FEM je radni naziv proizvoda TF Nootropics d.o.o., Niš.</span>
     <span>Dodaci ishrani nisu zamena za raznovrsnu i uravnoteženu ishranu.</span>
+    <span>Sajt koristi kolačiće za merenje oglasa. Više u <a href="/privatnost/#kolacici">Politici privatnosti</a>.</span>
     <a href="/privatnost/">Politika privatnosti</a>
   </div>
 </footer>
-
-<script>
-document.getElementById('reset').addEventListener('click', function () {
-  try { localStorage.removeItem('fem_kolacici'); } catch (e) {}
-  document.getElementById('reset-msg').hidden = false;
-});
-</script>
 
 </body>
 </html>
