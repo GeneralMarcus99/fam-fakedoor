@@ -1,15 +1,61 @@
-FEM test v3 — šta je unutra
+FEM — šta je gde (test od 13.11.2026)
+=======================================
 
-landing/kreatin     nova formula (kreatin 3 g + kolagen 5 g + C, D3, K2, B6, B9, B12, biotin, cink, selen)
-                    naslov prati oglas preko ?v=snaga | lepota | jutro
-landing/magnezijum  kontrola, isti sadržaj kao pre + pitanje o ceni
-oglasi/             snaga, lepota, jutro (kreatin), c1 magnezijum; feed 4x5 i story 9x16. Stari a1–a3 su u oglasi/staro/
-prijave-apps-script.gs  besplatan prijemnik prijava u Google Sheet
+1. SAJT (folder landing\ = tačno ono što ide na Cloudflare, projekat fem-lista)
+   - landing\index.html          početna: kratak uvod i dugme "Pogledaj FEM" → /formula/
+   - landing\formula\            stranica testa (prednarudžbina, samo email)
+   - landing\privatnost\         politika privatnosti
+   - landing\znak.svg, znak-32.png, znak-180.png   znak lotosa (header i ikonica u tabu)
 
-Linkovi u oglasima (domen zameni svojim):
-  snaga   /kreatin/?v=snaga&utm_source=meta&utm_campaign=fem3&utm_content=snaga
-  lepota  /kreatin/?v=lepota&utm_source=meta&utm_campaign=fem3&utm_content=lepota
-  jutro   /kreatin/?v=jutro&utm_source=meta&utm_campaign=fem3&utm_content=jutro
-  c1      /magnezijum/?utm_source=meta&utm_campaign=fem3&utm_content=c1
+2. KAKO RADI LINK /formula/
+   Dva parametra u linku: f = formula, v = poruka.
+   Primer: https://lista.tfnootropics.com/formula/?f=km&v=jutro
 
-U obe index.html, u CONFIG, već su upisani formEndpoint (Google Sheet) i metaPixelId (1109415491670878).
+   f   formula
+   --  ---------------------------
+   kk  kreatin 3 g + kolagen 5 g      (bez parametra ili nepoznato = kk)
+   km  kreatin 3 g + maka 2 g
+   mk  kolagen 5 g + maka 2 g
+
+   v       poruka (naslov i slika gore)
+   ------  -----------------------------------------------
+   jutro   "... Jedna kesica umesto pet bočica."  (bez parametra ili nepoznato = jutro)
+   lepota  "Kosa, koža i nokti posle 40."
+   snaga   "Trening posle 40. Kreatin 3 g, svako jutro."
+
+   Važno: mk nema kreatin, pa mk + snaga automatski prikazuje jutro.
+   Za probu bez upisa u pravi list dodaj &debug=1 na kraj linka (upis ide u list "QA").
+
+3. OGLASI
+   - oglasi\faza1\   f1_kk, f1_km, f1_mk  (feed 4:5 i story 9:16)
+   - oglasi\faza2\   f2_lepota, f2_snaga (feed 4:5 i story 9:16)
+   - oglasi\TEKSTOVI-OGLASA.txt   tekstovi i linkovi za svaki oglas
+   - oglasi\pregled-oglasi.jpg    svih 10 oglasa na jednoj slici
+   Ponovni render (iz foldera fem-sajt):  python fem_oglasi_render.py ..\fotografije oglasi
+
+4. ŠTA DREW RADI RUČNO
+   1) Apps Script: otvori postojeći Apps Script projekat, zameni ceo kod sadržajem
+      prijave-apps-script.gs → Deploy → Manage deployments → olovka (Edit) →
+      Version: New version → Deploy. URL ostaje isti.
+   2) Posle probe obriši list "QA" u Google Sheet-u.
+   3) Facebook stranica: profilna fb-stranica\fem-profilna-v2.png, cover fb-stranica\fem-cover-v2.png
+      (novi fini lotos u šljiva boji).
+   4) Fotografije za objave su u fotografije\nove-2026-11-10\ (tabela imena je ispod).
+   5) Upload: upload\FEM-v5-cloudflare.zip (ili napiši "objavi" Claude Code-u).
+
+5. NOVE FOTOGRAFIJE (staro ime → novo ime, u fotografije\nove-2026-11-10\)
+   Gemini_Generated_Image_2j7l3p2j7l3p2j7l.jpeg → zena-prozor-casa-16x9.jpeg
+   Gemini_Generated_Image_3s5ljp3s5ljp3s5l.jpeg → casa-ljubicasta-kesica-1x1-a.jpeg
+   Gemini_Generated_Image_5m917r5m917r5m91.jpeg → lotos-voda-16x9-a.jpeg
+   Gemini_Generated_Image_7seinn7seinn7sei.jpeg → ruke-kesica-casa-1x1.jpeg
+   Gemini_Generated_Image_8lr6qi8lr6qi8lr6.jpeg → proizvod-list-svila-16x9.jpeg
+   Gemini_Generated_Image_e69lvxe69lvxe69l.jpeg → proizvod-list-4x5-a.jpeg
+   Gemini_Generated_Image_fhydngfhydngfhyd.jpeg → proizvod-list-4x5-b.jpeg
+   Gemini_Generated_Image_i2fp6fi2fp6fi2fp.jpeg → proizvod-list-prostor-za-tekst-16x9.jpeg
+   Gemini_Generated_Image_jwnlyqjwnlyqjwnl.jpeg → zena-sipa-kesicu.jpeg
+   Gemini_Generated_Image_l40kp3l40kp3l40k.jpeg → casa-ljubicasta-kesica-1x1-b.jpeg
+   Gemini_Generated_Image_mpfy3ympfy3ympfy.jpeg → casa-vrtlog-1x1.jpeg
+   Gemini_Generated_Image_vnxl9evnxl9evnxl.jpeg → lotos-voda-16x9-b.jpeg
+
+Staro (stare stranice kreatin/magnezijum, stari oglasi, stari zip-ovi i logo) je u FEM\staro\2026-11-10\.
+Posle objave stari linkovi /kreatin/ i /magnezijum/ više ne postoje (namerno).

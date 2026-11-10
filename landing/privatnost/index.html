@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Politika privatnosti · FEM</title>
-<meta name="description" content="Kako TF Nootropics d.o.o. obrađuje podatke sa liste čekanja za FEM.">
+<meta name="description" content="Kako TF Nootropics d.o.o. obrađuje podatke iz prednarudžbine za FEM.">
+<link rel="icon" href="/znak-32.png">
+<link rel="apple-touch-icon" href="/znak-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
@@ -19,7 +21,7 @@ body{margin:0} img{max-width:100%} [hidden]{display:none!important}
   --muted: #5d575e;
   --line: #cfc9c1;
   --gold: #a9834a;
-  --accent: #5b2440;
+  --accent: #5B2A4E;
   --accent-ink: #fbf8f4;
   --font-display: "Bricolage Grotesque", "Manrope", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -42,8 +44,8 @@ body {
 }
 header.top { padding-block: 22px; }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.32em; font-size: 1.05rem; color: inherit; text-decoration: none; }
-.wordmark span { color: var(--gold); }
+.wordmark { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.32em; font-size: 1.05rem; color: inherit; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.wordmark .znak { display: block; width: 28px; height: 28px; }
 .pill {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; color: var(--muted);
@@ -80,7 +82,7 @@ footer a { color: inherit; }
 
 <header class="top">
   <div class="wrap">
-    <a class="wordmark" href="/">FEM<span>.</span></a>
+    <a class="wordmark" href="/"><img class="znak" src="/znak.svg" alt="" width="28" height="28"> FEM</a>
     <div class="pill">U pripremi</div>
   </div>
 </header>
@@ -88,44 +90,41 @@ footer a { color: inherit; }
 <main>
   <div class="wrap">
     <article class="doc">
-      <p class="eyebrow">Lista čekanja · FEM</p>
+      <p class="eyebrow">Prednarudžbina · FEM</p>
       <h1>Politika privatnosti</h1>
-      <p class="updated">Poslednja izmena: 1. novembar 2026.</p>
-      <p class="lede">Ovde piše koje podatke prikupljamo kad se upišeš na listu čekanja, zašto, koliko ih čuvamo i kako možeš da ih povučeš. FEM je radni naziv proizvoda u pripremi.</p>
+      <p class="updated">Poslednja izmena: 10. novembar 2026.</p>
+      <p class="lede">Ovde piše koje podatke prikupljamo kad ostaviš prednarudžbinu, zašto, koliko ih čuvamo i kako možeš da ih povučeš. FEM je radni naziv proizvoda u pripremi.</p>
 
       <h2>Ko obrađuje podatke</h2>
       <div class="box">
         <p><strong>TF NOOTROPICS DOO</strong><br>
         Stojana Andrića 35, 18106 Niš, Srbija<br>
         PIB 115760154 · MB 22312553<br>
-        Kontakt za privatnost: <a href="mailto:tfnootropics.com@tfnootropics.com">tfnootropics.com@tfnootropics.com</a></p>
+        Kontakt za privatnost: <a class="eml" data-u="team" data-d="tfnootropics.com" href="#">team [at] tfnootropics.com</a></p>
       </div>
       <p class="note">Podatke obrađujemo u skladu sa Zakonom o zaštiti podataka o ličnosti („Sl. glasnik RS“, br. 87/2018).</p>
 
       <h2>Koje podatke prikupljamo</h2>
-      <p>Kad popuniš formu na stranici:</p>
+      <p>Kad ostaviš prednarudžbinu:</p>
       <ul>
         <li>email adresu;</li>
-        <li>odgovore iz forme: gde najčešće kupuješ suplemente i zašto baš tamo;</li>
-        <li>cenu koja ti je prikazana i tvoj odgovor na pitanje o ceni i rezervaciji;</li>
-        <li>na stranici „lepota“ i odgovor na pitanje o kreatinu;</li>
-        <li>naziv varijante stranice na kojoj si se upisala;</li>
-        <li>UTM parametre iz linka (npr. iz kog oglasa si došla);</li>
-        <li>vreme prijave.</li>
+        <li>odgovor na pitanje „šta ti je najvažnije“, ako odgovoriš;</li>
+        <li>broj prednarudžbine, varijantu stranice i UTM parametre iz linka (npr. iz kog oglasa si došla);</li>
+        <li>vreme prijave i koliko je sekundi prošlo od otvaranja stranice (zaštita od automatskih prijava).</li>
       </ul>
-      <p>Email je potreban da bismo ti javili kad krene prodaja. Ostali odgovori nisu obavezni.</p>
+      <p>Email je potreban da bismo ti poslali konačan sastav i datum na potvrdu i kod za 15% popusta. Odgovor na pitanje nije obavezan.</p>
       <p>Preko Meta Pixel-a prikupljaju se tehnički podaci o poseti: koju stranicu si otvorila, podaci o uređaju i pregledaču, IP adresa i identifikatori iz kolačića. Tvoj email i odgovori iz forme ne šalju se Meta-i.</p>
 
       <h2>Zašto ih prikupljamo</h2>
       <ul>
-        <li>da ti javimo kad počne prodaja i pošaljemo kod za 15% popusta;</li>
-        <li>da pre lansiranja istražimo interesovanje i prihvatljivu cenu proizvoda;</li>
-        <li>da merimo koji oglasi dovode ljude na stranicu i na listu.</li>
+        <li>da ti javimo kad prva serija bude spremna i pošaljemo konačan sastav, datum i kod za 15% popusta;</li>
+        <li>da pre lansiranja istražimo interesovanje za proizvod;</li>
+        <li>da merimo koji oglasi dovode ljude na stranicu i do prednarudžbine.</li>
       </ul>
       <p>Ne prodajemo tvoje podatke i ne donosimo odluke o tebi automatski.</p>
 
       <h2>Pravni osnov</h2>
-      <p>Osnov je tvoj <strong>pristanak</strong>: štikliranje polja za saglasnost u formi, kojim pristaješ na obaveštenje o lansiranju i na merenje uspešnosti oglasa, i prihvatanje kolačića. Kolačiće možeš da blokiraš ili obrišeš u pregledaču (vidi deo „Kolačići“). Pristanak možeš da povučeš u svakom trenutku. Povlačenje ne utiče na zakonitost obrade pre toga.</p>
+      <p>Osnov je tvoj <strong>pristanak</strong>: štikliranje polja za saglasnost u formi, kojim pristaješ na mejlove o prednarudžbini i lansiranju i na merenje uspešnosti oglasa, i prihvatanje kolačića. Kolačiće možeš da blokiraš ili obrišeš u pregledaču (vidi deo „Kolačići“). Pristanak možeš da povučeš u svakom trenutku. Povlačenje ne utiče na zakonitost obrade pre toga.</p>
       <p>Hosting i fontovi tehnički moraju da prime IP adresu da bi ti stranica uopšte bila prikazana. To radimo na osnovu legitimnog interesa da stranica radi, bez kolačića za praćenje.</p>
 
       <h2>Ko još ima pristup (obrađivači) i prenos van Srbije</h2>
@@ -147,7 +146,7 @@ footer a { color: inherit; }
         <li>da tražiš ispravku netačnih podataka;</li>
         <li>da tražiš brisanje;</li>
         <li>da tražiš ograničenje obrade i da dobiješ svoje podatke u formatu pogodnom za prenos;</li>
-        <li>da povučeš pristanak u svakom trenutku: preko linka za odjavu u svakom mejlu ili mejlom na <a href="mailto:tfnootropics.com@tfnootropics.com">tfnootropics.com@tfnootropics.com</a>;</li>
+        <li>da povučeš pristanak u svakom trenutku: preko linka za odjavu u svakom mejlu ili mejlom na <a class="eml" data-u="team" data-d="tfnootropics.com" href="#">team [at] tfnootropics.com</a>;</li>
         <li>da podneseš pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti (<a href="https://www.poverenik.rs" target="_blank" rel="noopener">www.poverenik.rs</a>).</li>
       </ul>
       <p>Na zahteve odgovaramo najkasnije u roku od 30 dana.</p>
@@ -181,6 +180,14 @@ footer a { color: inherit; }
     <a href="/privatnost/">Politika privatnosti</a>
   </div>
 </footer>
+
+<script>
+/* Kontakt adresa se sastavlja tek u pregledaču, da je botovi ne pokupe iz HTML-a. */
+Array.prototype.forEach.call(document.querySelectorAll('.eml'), function (a) {
+  var m = a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+  a.setAttribute('href', 'mailto:' + m); a.textContent = m;
+});
+</script>
 
 </body>
 </html>

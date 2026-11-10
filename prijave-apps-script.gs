@@ -1,12 +1,18 @@
-// Google Sheets prijemnik za FEM landing stranice (bez Zapier-a).
-// 1) Novi Google Sheet "FEM — Lista čekanja" > Extensions > Apps Script > nalepi ovo.
-// 2) Deploy > New deployment > Web app > Execute as: Me, Who has access: Anyone > Deploy.
-// 3) Dobijeni URL (https://script.google.com/macros/s/.../exec) upiši u CONFIG.formEndpoint na obe stranice.
+// FEM prijemnik v3 (test od 13.11.2026). Upisuje u list "Test 13.11" (QA probe u list "QA"). Stari listovi ostaju netaknuti.
+// Ugradnja: u ISTOM Apps Script projektu zameni ceo kod ovim > Deploy > Manage deployments > olovka (Edit)
+// > Version: New version > Deploy. URL ostaje isti, stranica ne mora da se menja.
+function s_(x, n) { x = String(x == null ? '' : x).slice(0, n || 100); return /^[=+\-@]/.test(x) ? "'" + x : x; }
 function doPost(e) {
+  var d;
+  try { d = JSON.parse(e.postData.contents); } catch (err) { return ContentService.createTextOutput('bad'); }
+  if (d.hp) return ContentService.createTextOutput('ok');
+  if (String(d.variant || '').indexOf('F-') !== 0) return ContentService.createTextOutput('bad');
+  var email = String(d.email || '').trim().toLowerCase();
+  if (d.type === 'prednarudzbina' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return ContentService.createTextOutput('bad');
   var ss = SpreadsheetApp.getActive();
-  var sh = ss.getSheetByName('Prijave') || ss.insertSheet('Prijave');
-  if (sh.getLastRow() === 0) sh.appendRow(['Vreme', 'Tip', 'Varijanta', 'Email', 'Gde kupuje', 'Zašto', 'Cena', 'Odgovor (cena ili kreatin)', 'Stranica', 'UTM']);
-  var d = JSON.parse(e.postData.contents);
-  sh.appendRow([new Date(), d.type || '', d.variant || '', d.email || '', d.kupuje || '', d.zasto || '', d.cena || '', d.odgovor || '', d.page || '', JSON.stringify(d.utm || {})]);
+  var name = d.qa ? 'QA' : 'Test 13.11';
+  var sh = ss.getSheetByName(name) || ss.insertSheet(name);
+  if (sh.getLastRow() === 0) sh.appendRow(['Vreme', 'Tip', 'Formula', 'Hook', 'Broj', 'Email', 'Odgovor', 'Cena', 'Stranica', 'UTM', 'Sekunde']);
+  sh.appendRow([new Date(), s_(d.type, 30), s_(d.variant, 10), s_(d.hook, 10), s_(d.broj, 20), s_(email, 120), s_(d.odgovor, 30), s_(d.cena, 10), s_(d.page, 60), s_(JSON.stringify(d.utm || {}), 300), s_(d.sek, 10)]);
   return ContentService.createTextOutput('ok');
 }
