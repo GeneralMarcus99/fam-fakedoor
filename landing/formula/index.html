@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FEM</title>
+<title>Procvat</title>
 <meta name="description" content="Jutarnja kesica za žene posle 40, uz 9 vitamina i minerala. Prednarudžbina prve serije, ništa ne plaćaš sada.">
 <link rel="icon" href="/znak-32.png">
 <link rel="apple-touch-icon" href="/znak-180.png">
@@ -12,7 +12,7 @@
 (function(){var F={kk:1,km:1,mk:1},V={jutro:1,lepota:1,snaga:1},f="kk",v="jutro";
 try{var q=new URLSearchParams(location.search),qf=q.get("f"),qv=q.get("v");if(qf&&F[qf])f=qf;if(qv&&V[qv])v=qv;}catch(e){}
 if(f==="mk"&&v==="snaga")v="jutro";
-document.documentElement.className+=" f-"+f+" v-"+v;window.FEM_F=f;window.FEM_V=v;window.FEM_T0=Date.now();})();</script>
+document.documentElement.className+=" f-"+f+" v-"+v;window.PRC_F=f;window.PRC_V=v;window.PRC_T0=Date.now();})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
@@ -159,7 +159,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
 
 <header class="top">
   <div class="wrap">
-    <div class="wordmark"><img class="znak" src="/znak.svg" alt="" width="28" height="28"> FEM</div>
+    <div class="wordmark"><img class="znak" src="/znak.svg" alt="" width="28" height="28"> Procvat</div>
     <div class="pill">U pripremi</div>
   </div>
 </header>
@@ -169,7 +169,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
     <div>
       <p class="eyebrow">Za žene posle 40 · prednarudžbina prve serije</p>
       <h1 id="h1">Kreatin + kolagen. Jedna kesica umesto pet bočica.</h1>
-      <p class="lede" id="lede"><strong>FEM</strong> je jutarnja kesica kreatina i kolagena, uz 9 vitamina i minerala. Razmutiš u čaši vode i popiješ.</p>
+      <p class="lede" id="lede"><strong>Procvat</strong> je jutarnja kesica kreatina i kolagena, uz 9 vitamina i minerala. Razmutiš u čaši vode i popiješ.</p>
       <a class="cta" id="cta-top" href="#prijava">Poruči unapred · 4.490 RSD</a>
       <p class="reassure">Ništa ne plaćaš sada. Kad prva serija bude spremna, pišemo ti da potvrdiš, a plaćaš pouzećem.</p>
     </div>
@@ -181,7 +181,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
 (function () {
   var X = { kk: "Kreatin + kolagen", km: "Kreatin + maka", mk: "Kolagen + maka" };
   var GEN = { kk: "kreatina i kolagena", km: "kreatina i make", mk: "kolagena i make" };
-  var f = window.FEM_F, v = window.FEM_V;
+  var f = window.PRC_F, v = window.PRC_V;
   var H = {
     jutro:  { h1: X[f] + ". Jedna kesica umesto pet bočica.",
               lede: "je jutarnja kesica " + GEN[f] + ", uz 9 vitamina i minerala. Razmutiš u čaši vode i popiješ.",
@@ -195,7 +195,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
   };
   var c = H[v];
   document.getElementById("h1").textContent = c.h1;
-  document.getElementById("lede").innerHTML = "<strong>FEM</strong> " + c.lede;
+  document.getElementById("lede").innerHTML = "<strong>Procvat</strong> " + c.lede;
   var img = document.getElementById("hero");
   if (img.getAttribute("src") !== c.img) img.setAttribute("src", c.img);
   img.setAttribute("alt", c.alt);
@@ -212,7 +212,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
         jutro:  { src: "proizvod-jutro.jpg",  w: 928,  h: 1152, alt: "Pet ljubičastih kesica sa zlatnim lotosom na drvenoj klupi u parku, pored staklene flaše vode, vunenog šala i jesenjeg lišća" },
         lepota: { src: "proizvod-lepota.jpg", w: 928,  h: 1152, alt: "Pet ljubičastih kesica sa zlatnim lotosom na listu lotosa, na beloj svili, pored ružičastog cveta lotosa" },
         snaga:  { src: "proizvod-snaga.jpg",  w: 1100, h: 614,  alt: "Ljubičaste kesice na lanenom stolnjaku pored bučice, šolje čaja i buketa suvog cveća" }
-      }[window.FEM_V];
+      }[window.PRC_V];
       var img = document.getElementById("inside");
       img.setAttribute("src", P.src); img.setAttribute("width", P.w); img.setAttribute("height", P.h); img.setAttribute("alt", P.alt);
     })();
@@ -268,7 +268,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
 
 <footer>
   <div class="wrap">
-    <span>FEM je radni naziv proizvoda TF Nootropics d.o.o., Niš.</span>
+    <span>Procvat je proizvod u pripremi kompanije TF Nootropics d.o.o., Niš.</span>
     <span>Dodaci ishrani nisu zamena za raznovrsnu i uravnoteženu ishranu.</span>
     <span>Sajt koristi kolačiće za merenje oglasa. Više u <a href="/privatnost/#kolacici">Politici privatnosti</a>.</span>
     <a href="/privatnost/">Politika privatnosti</a>
@@ -280,8 +280,8 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
 var CONFIG = { formEndpoint: "https://script.google.com/macros/s/AKfycbwGafEumpx3a6Fdgrs_zGm_pS2EWWa7-pGjzdsTIrc2cWQUlCyzXV3BJI4ftJHA095s/exec", metaPixelId: "1109415491670878", price: "4.490" };
 
 (function () {
-  var variant = "F-" + window.FEM_F, hook = window.FEM_V, cn = variant + "-" + hook;
-  var T0 = window.FEM_T0 || Date.now();
+  var variant = "F-" + window.PRC_F, hook = window.PRC_V, cn = variant + "-" + hook;
+  var T0 = window.PRC_T0 || Date.now();
   var q; try { q = new URLSearchParams(location.search); } catch (e) { q = null; }
   var debug = !!(q && q.get("debug") === "1");
 
@@ -297,8 +297,8 @@ var CONFIG = { formEndpoint: "https://script.google.com/macros/s/AKfycbwGafEumpx
   function send(payload) {
     payload.variant = variant; payload.hook = hook; payload.page = location.pathname;
     payload.ts = new Date().toISOString(); payload.utm = utm; payload.sek = Math.round((Date.now() - T0) / 1000);
-    if (debug) { payload.qa = true; try { console.log('FEM debug payload', payload); } catch (e) {} }
-    if (!CONFIG.formEndpoint) { try { console.warn('FEM: formEndpoint nije podešen', payload); } catch (e) {} return; }
+    if (debug) { payload.qa = true; try { console.log('Procvat debug payload', payload); } catch (e) {} }
+    if (!CONFIG.formEndpoint) { try { console.warn('Procvat: formEndpoint nije podešen', payload); } catch (e) {} return; }
     try { fetch(CONFIG.formEndpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) }); } catch (e) {}
   }
 
@@ -326,7 +326,7 @@ var CONFIG = { formEndpoint: "https://script.google.com/macros/s/AKfycbwGafEumpx
     sent = true;
     document.getElementById('submit').disabled = true;
     var bot = document.getElementById('website').value !== '';
-    var br = 'FEM-' + Date.now().toString(36).toUpperCase().slice(-5);
+    var br = 'PRC-' + Date.now().toString(36).toUpperCase().slice(-5);
     if (!bot) {
       send({ type: 'prednarudzbina', broj: br, email: email, cena: CONFIG.price, saglasnost: true });
       if (window.fbq) window.fbq('track', 'Lead', { content_name: cn, value: 4490, currency: 'RSD' });

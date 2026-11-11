@@ -1,4 +1,4 @@
-// FEM prijemnik v3.1 (test od 13.11.2026). Upisuje u list "Test 13.11" (QA probe u list "QA"). Stari listovi ostaju netaknuti.
+// Procvat prijemnik v3.1 (test od 13.11.2026). Upisuje u list "Test 13.11" (QA probe u list "QA"). Stari listovi ostaju netaknuti.
 // Ugradnja: u ISTOM Apps Script projektu zameni ceo kod ovim > Deploy > Manage deployments > olovka (Edit)
 // > Version: New version > Deploy. URL ostaje isti, stranica ne mora da se menja. Objavljuje vlasnik Sheet-a.
 // Cena se upisuje sa ' ispred, da Sheets "4.490" ne pretvori u broj 4,49.

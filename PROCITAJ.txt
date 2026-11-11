@@ -1,8 +1,8 @@
-FEM — šta je gde (test od 13.11.2026)
+Procvat — šta je gde (test od 13.11.2026)
 =======================================
 
-1. SAJT (folder landing\ = tačno ono što ide na Cloudflare, projekat fem-lista)
-   - landing\index.html          početna: kratak uvod i dugme "Pogledaj FEM" → /formula/
+1. SAJT (folder landing\ = tačno ono što ide na Cloudflare, projekat fem-lista — ime projekta na Cloudflare-u ne može da se menja, domen je lista.tfnootropics.com)
+   - landing\index.html          početna: kratak uvod i dugme "Pogledaj Procvat" → /formula/
    - landing\formula\            stranica testa (prednarudžbina, samo email)
    - landing\privatnost\         politika privatnosti
    - landing\znak.svg, znak-32.png, znak-180.png   znak lotosa (header i ikonica u tabu)
@@ -31,7 +31,7 @@ FEM — šta je gde (test od 13.11.2026)
    - oglasi\faza2\   f2_lepota, f2_snaga (feed 4:5 i story 9:16)
    - oglasi\TEKSTOVI-OGLASA.txt   tekstovi i linkovi za svaki oglas
    - oglasi\pregled-oglasi.jpg    svih 10 oglasa na jednoj slici
-   Ponovni render (iz foldera fem-sajt):  python fem_oglasi_render.py ..\fotografije oglasi
+   Ponovni render (iz foldera fem-sajt):  python procvat_oglasi_render.py ..\fotografije oglasi
    Oglasi koriste fotke SA kesicom. Stranica gore ima istu ženu BEZ kesice, a niže je proizvod u stilu poruke:
    jutro = landing\formula\proizvod-jutro.jpg (klupa u parku, izvor fotografije\nove-2026-11-10\proizvod-park-4x5.jpeg),
    lepota = proizvod-lepota.jpg (svila), snaga = proizvod-snaga.jpg (bučica).
@@ -41,10 +41,10 @@ FEM — šta je gde (test od 13.11.2026)
       prijave-apps-script.gs → Deploy → Manage deployments → olovka (Edit) →
       Version: New version → Deploy. URL ostaje isti.
    2) Posle probe obriši list "QA" u Google Sheet-u.
-   3) Facebook stranica: profilna fb-stranica\fem-profilna-v2.png, cover fb-stranica\fem-cover-v2.png
-      (novi fini lotos u šljiva boji).
+   3) Facebook stranica: profilna fb-stranica\procvat-profilna.png, cover fb-stranica\procvat-cover.png
+      (ovalni lotos u šljiva boji; postavljeno 11.11.2026).
    4) Fotografije za objave su u fotografije\nove-2026-11-10\ (tabela imena je ispod).
-   5) Upload: upload\FEM-v5-cloudflare.zip (ili napiši "objavi" Claude Code-u).
+   5) Upload: upload\Procvat-v6-cloudflare.zip (ili napiši "objavi" Claude Code-u).
 
 5. NOVE FOTOGRAFIJE (staro ime → novo ime, u fotografije\nove-2026-11-10\)
    Gemini_Generated_Image_2j7l3p2j7l3p2j7l.jpeg → zena-prozor-casa-16x9.jpeg
@@ -60,5 +60,5 @@ FEM — šta je gde (test od 13.11.2026)
    Gemini_Generated_Image_mpfy3ympfy3ympfy.jpeg → casa-vrtlog-1x1.jpeg
    Gemini_Generated_Image_vnxl9evnxl9evnxl.jpeg → lotos-voda-16x9-b.jpeg
 
-Staro (stare stranice kreatin/magnezijum, stari oglasi, stari zip-ovi i logo) je u FEM\staro\2026-11-10\.
+Staro (stare stranice kreatin/magnezijum, stari oglasi, stari zip-ovi i logo) je u staro\2026-11-10\ i staro\2026-11-11\ (FEM verzije pre preimenovanja u Procvat).
 Posle objave stari linkovi /kreatin/ i /magnezijum/ više ne postoje (namerno).

@@ -1,8 +1,8 @@
 {
-  "name": "fem-sajt",
+  "name": "procvat-sajt",
   "version": "1.0.0",
   "private": true,
-  "description": "FEM fake door landing stranice (kreatin, magnezijum)",
+  "description": "Procvat fake door landing stranice (test formule)",
   "scripts": {
     "dev": "serve landing -l 3000"
   },
