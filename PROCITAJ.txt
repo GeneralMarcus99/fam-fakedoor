@@ -32,6 +32,9 @@ FEM — šta je gde (test od 13.11.2026)
    - oglasi\TEKSTOVI-OGLASA.txt   tekstovi i linkovi za svaki oglas
    - oglasi\pregled-oglasi.jpg    svih 10 oglasa na jednoj slici
    Ponovni render (iz foldera fem-sajt):  python fem_oglasi_render.py ..\fotografije oglasi
+   Oglasi koriste fotke SA kesicom. Stranica gore ima istu ženu BEZ kesice, a niže je proizvod u stilu poruke:
+   jutro = landing\formula\proizvod-jutro.jpg (privremeno lotos, zameniti fotkom u parku),
+   lepota = proizvod-lepota.jpg (svila), snaga = proizvod-snaga.jpg (bučica).
 
 4. ŠTA DREW RADI RUČNO
    1) Apps Script: otvori postojeći Apps Script projekat, zameni ceo kod sadržajem

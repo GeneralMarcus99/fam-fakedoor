@@ -204,7 +204,19 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: s
 
 <section class="inside">
   <div class="wrap">
-    <img id="inside" src="proizvod.jpg" alt="Pet ljubičastih kesica sa zlatnim lotosom na listu lotosa, pored ružičastog cveta lotosa" width="928" height="1152" loading="lazy">
+    <img id="inside" src="proizvod-jutro.jpg" alt="Pet ljubičastih kesica sa zlatnim lotosom na listu lotosa, pored ružičastog cveta lotosa" width="928" height="1152" loading="lazy">
+    <script>
+    /* Slika proizvoda u stilu poruke (v): jutro = park, lepota = svila, snaga = bučica. */
+    (function () {
+      var P = {
+        jutro:  { src: "proizvod-jutro.jpg",  w: 928,  h: 1152, alt: "Pet ljubičastih kesica sa zlatnim lotosom na listu lotosa, pored ružičastog cveta lotosa" },
+        lepota: { src: "proizvod-lepota.jpg", w: 928,  h: 1152, alt: "Pet ljubičastih kesica sa zlatnim lotosom na listu lotosa, na beloj svili, pored ružičastog cveta lotosa" },
+        snaga:  { src: "proizvod-snaga.jpg",  w: 1100, h: 614,  alt: "Ljubičaste kesice na lanenom stolnjaku pored bučice, šolje čaja i buketa suvog cveća" }
+      }[window.FEM_V];
+      var img = document.getElementById("inside");
+      img.setAttribute("src", P.src); img.setAttribute("width", P.w); img.setAttribute("height", P.h); img.setAttribute("alt", P.alt);
+    })();
+    </script>
     <div>
       <h2>Šta je u kesici</h2>
       <ul class="facts">

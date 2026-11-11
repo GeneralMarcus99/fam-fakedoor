@@ -74,13 +74,14 @@ def ad(src, out, head, small, w, h, cx=0.5, cy=0.5, bottom_pad=150, top=False, y
     im.convert("RGB").save(out, quality=90)
 
 # Test 13.11: faza1 = tri formule (poruka jutro), faza2 = lepota i snaga na pobedničkoj formuli.
+# Oglasi koriste fotke SA kesicom (jutro_strana, lepota_strana, snaga_oglas); stranica gore ima fotke bez kesice.
 # Faza 2 "jutro" koristi slike iz faze 1. cx, cy pomeraju samo kadar (ne tekst) ako naslov pada preko lica.
 F1_SMALL = "Za žene posle 40, uz 9 vitamina i minerala. Razmutiš u vodi i popiješ."
 JOBS = [
-    ("faza1", "f1_kk", "jutro_oglas.jpg.jpeg", "Kreatin + kolagen.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
-    ("faza1", "f1_km", "jutro_oglas.jpg.jpeg", "Kreatin + maka.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
-    ("faza1", "f1_mk", "jutro_oglas.jpg.jpeg", "Kolagen + maka.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
-    ("faza2", "f2_lepota", "lepota_oglas.jpg.jpeg", "Kosa, koža i nokti|posle 40.",
+    ("faza1", "f1_kk", "jutro_strana.jpg.jpeg", "Kreatin + kolagen.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
+    ("faza1", "f1_km", "jutro_strana.jpg.jpeg", "Kreatin + maka.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
+    ("faza1", "f1_mk", "jutro_strana.jpg.jpeg", "Kolagen + maka.|Jedna kesica umesto pet bočica.", F1_SMALL, 0.5, 0.0),
+    ("faza2", "f2_lepota", "lepota_strana.jpg.jpeg", "Kosa, koža i nokti|posle 40.",
      "Biotin, cink i selen doprinose održavanju normalne kose.", 0.5, 0.0),
     ("faza2", "f2_snaga", "snaga_oglas.jpg.jpeg", "Trening posle 40.|Kreatin 3 g, svako jutro.",
      "Kreatin povećava fizičku sposobnost pri uzastopnim, kratkotrajnim vežbama visokog intenziteta.", 0.5, 0.0),
